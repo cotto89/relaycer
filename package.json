@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production babel src -d dist -s",
+    "test": "mocha test/src",
     "clean": "rimraf ./dist"
   },
   "author": "cotto",
