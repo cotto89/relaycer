@@ -30,9 +30,12 @@ export default class Task {
         result = this.fn(current, next, this.arg) || {};
         break;
       case 'breaker':
-        result = this.fn(current, next, this.arg) && 'BREAK';
+        if (this.fn(current, next, this.arg)) {
+          result = 'BREAK';
+        }
         break;
       default:
+        result = {};
         break;
     }
 
