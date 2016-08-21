@@ -34,7 +34,10 @@ export default class Store extends EventEmitter {
    */
   process(composer) {
     return composer.__compose__(this.state, ((err, current, next) => {
-      if (err) return err;
+      if (err) {
+        this.emit('process:error', err);
+        return err;
+      }
       return this.setState(next);
     }));
   }
