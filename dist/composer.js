@@ -107,8 +107,8 @@ var Composer = function () {
      */
 
   }, {
-    key: 'transfrom',
-    value: function transfrom(transformer, value) {
+    key: 'transform',
+    value: function transform(transformer, value) {
       var task = new _task2.default({ type: 'transformer', fn: transformer, arg: value });
       this._tasks.push(task);
       return this;

@@ -41,7 +41,7 @@ export default class Composer {
    * @param {any} [value]
    * @returns {Composer}
    */
-  transfrom(transformer, value) {
+  transform(transformer, value) {
     const task = new Task({ type: 'transformer', fn: transformer, arg: value });
     this._tasks.push(task);
     return this;

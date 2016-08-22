@@ -37,7 +37,7 @@ describe('Composer()', function() {
       const composer = new Composer()
         .batch(mod, { id: 3 })
         .skipIf(skip)
-        .transfrom(transform, 10)
+        .transform(transform, 10)
         .breakIf(breaker);
 
       assert.deepEqual(composer._tasks, [
@@ -93,7 +93,7 @@ describe('Composer()', function() {
       it('should return nextState', function() {
         const nextState = new Composer()
           .batch(mod, { id: 3 })
-          .transfrom(transform, 10)
+          .transform(transform, 10)
           .__compose__(this.state, function(err, curent, next) {
             assert.equal(err, undefined);
             assert.deepEqual(next, {
@@ -141,7 +141,7 @@ describe('Composer()', function() {
       it('should break after process when breakIf return true', function() {
         new Composer()
           .batch(mod, { id: 4 })
-          .transfrom(() => {
+          .transform(() => {
             throw new Error();
           })
           .__compose__(this.state, function(err, current, next) {
