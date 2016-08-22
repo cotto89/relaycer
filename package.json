@@ -1,12 +1,16 @@
 {
   "name": "relaycer",
   "version": "0.0.1",
-  "description": "Application state manager",
+  "description": "Application state transaction manager",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production babel src -d dist -s",
     "test": "mocha test/src",
     "clean": "rimraf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cotto89/relaycer.git"
   },
   "author": "cotto",
   "license": "MIT",
